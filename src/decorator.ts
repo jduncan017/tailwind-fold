@@ -81,20 +81,40 @@ export class Decorator {
 
             const text = match[0]
             const textToFold = match[matchedGroup]
-            const foldStartIndex = text.indexOf(textToFold)
 
-            const foldStartPosition = this.activeEditor.document.positionAt(match.index + foldStartIndex)
+            // Find the first space within the group to fold after the first word
+            const spaceIndex = textToFold.indexOf(" ")
+            if (spaceIndex === -1) {
+                // No space found; nothing to fold
+                const range = new Range(
+                    this.activeEditor.document.positionAt(match.index),
+                    this.activeEditor.document.positionAt(match.index + text.length)
+                )
+                this.unfoldedRanges.push(range)
+                continue
+            }
+
+            // Set the range to fold everything after the first space
+            const foldStartPosition = this.activeEditor.document.positionAt(
+                match.index + matchedGroup - 1 + spaceIndex + 1
+            )
             const foldEndPosition = this.activeEditor.document.positionAt(
-                match.index + foldStartIndex + textToFold.length
+                match.index + matchedGroup - 1 + textToFold.length
             )
             const range = new Range(foldStartPosition, foldEndPosition)
             const foldLengthThreshold = Config.get<number>(Settings.FoldLengthThreshold) ?? 0
+
             if (
                 !this.autoFold ||
                 this.isRangeSelected(range) ||
                 (this.unfoldIfLineSelected && this.isLineOfRangeSelected(range))
             ) {
-                this.unfoldedRanges.push(range)
+                this.unfoldedRanges.push(
+                    new Range(
+                        this.activeEditor.document.positionAt(match.index),
+                        this.activeEditor.document.positionAt(match.index + text.length)
+                    )
+                )
                 continue
             }
             if (textToFold.length < foldLengthThreshold) {
@@ -102,6 +122,7 @@ export class Decorator {
                 this.unfoldedRanges.push(range)
                 continue
             }
+
             this.foldedRanges.push(range)
         }
 

@@ -36,7 +36,7 @@ export function FoldedDecorationType() {
             contentIconPath:
                 Config.get<boolean>(Settings.ShowTailwindImage) === true ? generateScaledSVGPath() : undefined,
             backgroundColor: Config.get<string>(Settings.FoldedTextBackgroundColor) ?? "transparent",
-            margin: "0 0 0 -5px",
+            margin: "0 0 0 5px",
         },
         after: {
             contentText: Config.get<string>(Settings.FoldedText) ?? "class",
