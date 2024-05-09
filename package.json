@@ -1,13 +1,13 @@
 {
     "name": "tailwind-fold",
-    "displayName": "Tailwind Fold",
-    "description": "Improves code readability by folding class attributes",
+    "displayName": "Tailwind Fold w Names",
+    "description": "Improves code readability by folding class attributes while leaving first word visible",
     "version": "0.1.0",
     "icon": "images/icon.png",
-    "publisher": "stivo",
+    "publisher": "jduncan017",
     "repository": {
         "type": "git",
-        "url": "https://github.com/stivoat/tailwind-fold"
+        "url": "https://github.com/jduncan017/tailwind-fold"
     },
     "engines": {
         "vscode": "^1.74.0"
@@ -49,48 +49,38 @@
                     "default": true,
                     "description": "Automatically folds class attributes"
                 },
-                "tailwind-fold.foldStyle": {
-                    "order": 2,
-                    "type": "string",
-                    "default": "ALL",
-                    "description": "Whether to fold entire class attribute or only content in quotes",
-                    "enum": [
-                        "ALL",
-                        "QUOTES"
-                    ]
-                },
                 "tailwind-fold.unfoldIfLineSelected": {
-                    "order": 3,
+                    "order": 2,
                     "type": "boolean",
                     "default": false,
                     "description": "Automatically unfolds when the line is selected"
                 },
                 "tailwind-fold.showTailwindImage": {
-                    "order": 4,
+                    "order": 3,
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "Shows tailwind image before folded text"
                 },
                 "tailwind-fold.foldedText": {
-                    "order": 5,
+                    "order": 4,
                     "type": "string",
                     "default": "...",
                     "description": "Text to show when folded"
                 },
                 "tailwind-fold.foldedTextColor": {
-                    "order": 6,
+                    "order": 5,
                     "type": "string",
                     "default": "#7cdbfe7e",
                     "description": "Color of folded text"
                 },
                 "tailwind-fold.foldedTextBackgroundColor": {
-                    "order": 7,
+                    "order": 6,
                     "type": "string",
                     "default": "#52b7ee09",
                     "description": "Background color of folded section"
                 },
                 "tailwind-fold.unfoldedTextOpacity": {
-                    "order": 8,
+                    "order": 7,
                     "type": "number",
                     "default": 1,
                     "description": "Formats class list when unfolded",
@@ -98,7 +88,7 @@
                     "maximum": 1
                 },
                 "tailwind-fold.supportedLanguages": {
-                    "order": 9,
+                    "order": 8,
                     "type": "array",
                     "default": [
                         "html",
@@ -118,7 +108,7 @@
                     "description": "Supported languages"
                 },
                 "tailwind-fold.foldLengthThreshold": {
-                    "order": 10,
+                    "order": 9,
                     "type": "number",
                     "default": 0,
                     "description": "Specifies the minimum number of characters required for a section to fold"

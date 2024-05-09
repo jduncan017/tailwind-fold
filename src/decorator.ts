@@ -42,8 +42,7 @@ export class Decorator {
         this.autoFold = Config.get<boolean>(Settings.AutoFold) ?? false
         this.unfoldIfLineSelected = Config.get<boolean>(Settings.UnfoldIfLineSelected) ?? false
         this.supportedLanguages = Config.get<string[]>(Settings.SupportedLanguages) ?? []
-        this.regExGroups =
-            Config.get<string>(Settings.FoldStyle) === "ALL" ? this.regExGroupsAll : this.regExGroupsQuotes
+        this.regExGroups = this.regExGroupsAll
 
         this.unfoldedDecorationType.dispose()
         this.foldedDecorationType.dispose()
