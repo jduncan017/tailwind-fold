@@ -1,10 +1,13 @@
-# Tailwind Fold with Names
+# Tailwind Fold With Class Names
 
-Tailwind is an amazing way to write CSS. It's easy to duplicate from project to project, reduces total lines of code, and gets rid of bulky CSS files. However, for me it has always had 2 main flaws - it's messy to read and you can't easily tell what you're looking at.
+Tailwind CSS offers a fantastic way to style your projects. It's easy to replicate across different projects, minimizes overall code, and eliminates those cumbersome CSS files. However, I've always encountered two main challenges with it:
 
-A few developers have come up with this Inline Fold solution that hides away the CSS when you're not using it, I just added one modification to
-always show the first word in your class/className. This allows you to create names for your HTML elements so you can still use BEM styling or
-naming conventions of any kind. Read on for more!
+1. It can look cluttered and hard to read.
+2. It's difficult to quickly identify the component you're working with.
+
+To address these issues, some developers devised the Inline Fold solution, which hides the CSS classes when you're not using them. I've taken it a step further by modifying it to always display the first class in your class or className attribute. This tweak allows you to create recognizable names for your HTML elements, so you can still apply BEM or any other naming conventions.
+
+Read on to learn more about this improved solution!
 
 ## Features
 

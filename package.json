@@ -1,13 +1,13 @@
 {
-    "name": "tailwind-fold",
-    "displayName": "Tailwind Fold w Names",
+    "name": "tailwind-fold-with-class-names",
+    "displayName": "Tailwind Fold With Class Names",
     "description": "Improves code readability by folding class attributes while leaving first word visible",
     "version": "0.1.0",
     "icon": "images/icon.png",
     "publisher": "jduncan017",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jduncan017/tailwind-fold"
+        "url": "https://github.com/jduncan017/tailwind-fold-with-class-names"
     },
     "engines": {
         "vscode": "^1.74.0"
@@ -58,7 +58,7 @@
                 "tailwind-fold.showTailwindImage": {
                     "order": 3,
                     "type": "boolean",
-                    "default": false,
+                    "default": true,
                     "description": "Shows tailwind image before folded text"
                 },
                 "tailwind-fold.foldedText": {
